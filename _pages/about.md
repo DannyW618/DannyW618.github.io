@@ -1,19 +1,40 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Danny Wang"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+I am a PhD student at The University of Queensland (UQ), Australia, specialising in robust and trustworthy graph machine learning. My research is conducted under the supervision of Dr. Ruihong Qiu,  A/Prof. Guangdong Bai, and Prof. Zi (Helen) Huang. In 2023, I completed my dual Bachelor of Computer Science and Master of Data Science degrees at UQ, graduating as the class of 2023 valedictorian.
 
-A data-driven personal website
+Publications
 ======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;font-size:1em;"><tbody>
+          <tr>
+            <td style="padding:0 12px 0 0;width:25%;vertical-align:middle">
+              <img src="https://github.com/user-attachments/assets/5a3f0ea4-b8c9-422e-a540-91ff680c726b" alt="PontTuset" width="200" style="border-style: none">
+            </td>
+            <td width="75%" valign="middle">
+              <strong>GOLD: Graph Out-of-Distribution Detection via Implicit Adversarial Latent Generation</strong>
+              <br>
+              <strong>Danny Wang</strong>, Ruihong Qiu, Guangdong Bai, Zi Huang
+              <br>
+              ICLR 2025 (<strong>Spotlight</strong>)
+              <br>
+              <a href="https://arxiv.org/abs/2502.05780" target="_blank">arXiv</a> /
+              <a href="https://github.com/DannyW618/GOLD" target="_blank">code</a>
+              <p></p>
+              <p></p>
+              <p>
+                We propose the GOLD framework for graph OOD detection, an implicit adversarial learning pipeline with synthetic OOD exposure without pre-trained models.
+              </p>
+            </td>
+          </tr>
+</tbody>
+</table>
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the markdown files! Finally, you can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
 
 Getting started
 ======
