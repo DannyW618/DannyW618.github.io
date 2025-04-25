@@ -35,6 +35,30 @@ Publications
 </tbody>
 </table>
 
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;font-size:1em;"><tbody>
+          <tr>
+            <td style="padding:0 12px 0 0;width:25%;vertical-align:middle">
+              <img src="../images/GetFair.jpeg" alt="PontTuset" width="200" style="border-style: none">
+            </td>
+            <td width="75%" valign="middle">
+              <strong>Hate Speech Detection with Generalizable Target-aware Fairness</strong>
+              <br>
+              Tong Chen, <strong>Danny Wang</strong>, Xurong Liang, Marten Risius, Gianluca Demartini, Hongzhi Yin
+              <br>
+              KDD 2024
+              <br>
+              <a href="https://dl.acm.org/doi/abs/10.1145/3637528.3671821" target="_blank">arXiv</a> /
+              <a href="https://github.com/xurong-liang/GetFair" target="_blank">code</a>
+              <p></p>
+              <p></p>
+              <p>
+                We propose the GetFair framework, a novel approach for equitably detecting hate speech across diverse targets, including those unseen during training. This framework ensures fair detection with consideration of the social groups targeted in the content.
+              </p>
+            </td>
+          </tr>
+</tbody>
+</table>
+
 
 Teaching Experience
 ===
