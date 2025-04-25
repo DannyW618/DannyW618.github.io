@@ -23,8 +23,8 @@ Publications
               <br>
               ICLR 2025 (<strong>Spotlight</strong>)
               <br>
-              <a href="https://arxiv.org/abs/2502.05780" target="_blank">arXiv</a> /
-              <a href="https://github.com/DannyW618/GOLD" target="_blank">code</a>
+              <a href="https://arxiv.org/abs/2502.05780" target="_blank">Paper</a> /
+              <a href="https://github.com/DannyW618/GOLD" target="_blank">Code</a>
               <p></p>
               <p></p>
               <p>
@@ -47,8 +47,8 @@ Publications
               <br>
               KDD 2024
               <br>
-              <a href="https://dl.acm.org/doi/abs/10.1145/3637528.3671821" target="_blank">arXiv</a> /
-              <a href="https://github.com/xurong-liang/GetFair" target="_blank">code</a>
+              <a href="https://dl.acm.org/doi/abs/10.1145/3637528.3671821" target="_blank">Paper</a> /
+              <a href="https://github.com/xurong-liang/GetFair" target="_blank">Code</a>
               <p></p>
               <p></p>
               <p>
