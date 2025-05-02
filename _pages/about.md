@@ -78,3 +78,4 @@ Awards
 - 12/2023, Valedictorian, I was selected as the **class of 2023 Valedictorian** for the graduation ceremony of the Faculty of Engineering, Architecture and Information Technology
 - 2020, 2021, 2022, 2023 -- **Dean’s Commendation for Academic Excellence**. The Faculty of Engineering, Architecture and Information Technology, has determined that students who demonstrate excellence in academic performance should receive acknowledgement of the achievement.
   
+<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=Z_eDdxmRmKJNB-6CkD-fuNodpz-v23QtWbpWgEUEaiE"></script>
