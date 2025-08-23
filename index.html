@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Danny Wang</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Styles -->
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./script.js"></script>
+
+  <!-- Typed (hero line) -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <!-- tsParticles (interactive background for About) -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">Danny Wang</div>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+      </nav>
+      <div class="nav-ops">
+        <button id="theme-toggle" class="toggle" aria-label="Toggle theme">
+          <span class="knob"></span>
+        </button>
+        <i class="fa-solid fa-moon moon-icon" aria-hidden="true" title="Toggle theme"></i>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="section about-section">
+    <div id="about-bg"></div>
+
+    <div class="container about-wrap hover-sheen">
+      <div class="about-media">
+        <img src="./images/profile.jpg" alt="Danny Wang" class="avatar" />
+      </div>
+      <div class="about-text">
+        <h1>Danny Wang</h1>
+        <h2><span id="typed-text"></span></h2>
+        <!-- New institution subheader -->
+        <p class="affiliation">School of EECS, The University of Queensland, Australia</p>
+
+        <p class="lead">
+          I am a PhD student at <span class="highlight">The University of Queensland (UQ)</span>, Australia, specialising in 
+          robust and trustworthy graph machine learning.
+          My research is conducted under the supervision of Dr. <a href="https://ruihongqiu.github.io/">Ruihong Qiu</a>,
+         A/Prof. <a href="https://scholar.google.com/citations?user=4TjSSaUAAAAJ&hl=zh-CN">Guangdong Bai</a>,
+          and Prof. <a href="https://scholar.google.com/citations?user=iAWMsgEAAAAJ&hl=en">Zi (Helen) Huang</a>. I completed my dual Bachelor 
+          of Computer Science and Master of Data Science degrees at UQ, graduating as the class of
+          <span class="highlight">2023 Valedictorian</span>.
+        </p>
+
+        <div class="socials">
+          <a href="danny.wang@uq.edu.au" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://scholar.google.com.au/citations?user=I1K5STAAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+          <a href="https://www.linkedin.com/in/danny-wang-374581217/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/DannyW618" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="publications" class="section">
+    <div class="container">
+      <h2 class="section-title">Publications</h2>
+
+      <div class="pub-list">
+
+        <!-- Row 1 -->
+        <article class="pub-row">
+          <div class="pub-media">
+            <img src="./images/text-topo.png" 
+            alt="TextTopo"
+            class="paper-thumb"
+            data-img="./images/text-topo.png">
+          </div>
+          <div class="pub-content">
+            <h3>Text Meets Topology: Rethinking Out-of-distribution Detection in Text-Rich Networks</h3>
+            <div class="authors">
+              <strong>Danny Wang</strong>, <a href="https://ruihongqiu.github.io/">Ruihong Qiu</a>, <a href="https://scholar.google.com/citations?user=4TjSSaUAAAAJ&hl=zh-CN">Guangdong Bai</a>, <a href="https://scholar.google.com/citations?user=iAWMsgEAAAAJ&hl=en">Zi Huang</a>
+            </div>
+            <p class="meta">
+              <span class="pub-venue">EMNLP 2025 - Main Track</span>
+            </p>
+            <p>We introduce TextTopoOOD, a framework for modeling diverse OOD scenarios on text-rich networks, and propose TNT-OOD, a novel detection method that captures the intricate interplay between text and topology.</p>
+            <div class="cta">
+              <button class="btn ghost open-abs"
+                data-title="Text Meets Topology: Rethinking Out-of-distribution Detection in Text-Rich Networks"
+                data-abstract="Out-of-distribution (OOD) detection remains challenging in text-rich networks, where textual features intertwine with topological structures. Existing methods primarily address label shifts or rudimentary domain-based splits, overlooking the intricate textual-structural diversity. For example, in social networks, where users represent nodes with textual features (name, bio) while edges indicate friendship status, OOD may stem from the distinct language patterns between bot and normal users. To address this gap, we introduce the TextTopoOOD framework for evaluating detection across diverse OOD scenarios: (1) attribute-level shifts via text augmentations and embedding perturbations; (2) structural shifts through edge rewiring and semantic connections; (3) thematically-guided label shifts; and (4) domain-based divisions. Furthermore, we propose TNT-OOD to model the complex interplay between Text aNd Topology using: 1) a novel cross-attention module to fuse local structure into node-level text representations, and 2) a HyperNetwork to generate node-specific transformation parameters. This aligns topological and semantic features of ID nodes, enhancing ID/OOD distinction across structural and textual shifts. Experiments on 11 datasets across four OOD scenarios demonstrate the nuanced challenge of TextTopoOOD for evaluating OOD detection in text-rich networks.">
+                Show abstract
+              </button>
+              <!-- <a class="btn" href="#" target="_blank">Paper</a>
+              <a class="btn" href="#" target="_blank">Code</a> -->
+            </div>
+          </div>
+        </article>
+
+        <!-- Row 2 -->
+        <article class="pub-row">
+          <div class="pub-media">
+            <img src="./images/gold.png" 
+            alt="GOLD"
+            class="paper-thumb"
+            data-img="./images/gold.png">
+          </div>
+          <div class="pub-content">
+            <h3>GOLD: Graph Out-of-Distribution Detection via Implicit Adversarial Latent Generation</h3>
+            <div class="authors">
+              <strong>Danny Wang</strong>, <a href="https://ruihongqiu.github.io/">Ruihong Qiu</a>, <a href="https://scholar.google.com/citations?user=4TjSSaUAAAAJ&hl=zh-CN">Guangdong Bai</a>, <a href="https://scholar.google.com/citations?user=iAWMsgEAAAAJ&hl=en">Zi Huang</a>
+            </div>
+            <p class="meta">
+              <span class="pub-venue">ICLR 2025 - Spotlight</span>
+            </p>
+            <p>We propose the GOLD framework for graph OOD detection, an implicit adversarial learning pipeline with synthetic OOD exposure without pre-trained models.</p>
+            <div class="cta">
+              <button class="btn ghost open-abs"
+                data-title="GOLD: Graph Out-of-Distribution Detection via Implicit Adversarial Latent Generation"
+                data-abstract="Despite graph neural networks' (GNNs) great success in modelling graph-structured data, out-of-distribution (OOD) test instances still pose a great challenge for current GNNs. One of the most effective techniques to detect OOD nodes is to expose the detector model with an additional OOD node-set, yet the extra OOD instances are often difficult to obtain in practice. Recent methods for image data address this problem using OOD data synthesis, typically relying on pre-trained generative models like Stable Diffusion. However, these approaches require vast amounts of additional data, as well as one-for-all pre-trained generative models, which are not available for graph data. Therefore, we propose the GOLD framework for graph OOD detection, an implicit adversarial learning pipeline with synthetic OOD exposure without pre-trained models. The implicit adversarial training process employs a novel alternating optimisation framework by training: (1) a latent generative model to regularly imitate the in-distribution (ID) embeddings from an evolving GNN, and (2) a GNN encoder and an OOD detector to accurately classify ID data while increasing the energy divergence between the ID embeddings and the generative model's synthetic embeddings. This novel approach implicitly transforms the synthetic embeddings into pseudo-OOD instances relative to the ID data, effectively simulating exposure to OOD scenarios without auxiliary data. Extensive OOD detection experiments are conducted on five benchmark graph datasets, verifying the superior performance of GOLD without using real OOD data compared with the state-of-the-art OOD exposure and non-exposure baselines.">
+                Show abstract
+              </button>
+              <a class="btn" href="https://arxiv.org/abs/2502.05780" target="_blank">Paper</a>
+              <a class="btn" href="https://github.com/DannyW618/GOLD" target="_blank">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Row 3 -->
+        <article class="pub-row">
+          <div class="pub-media">
+            <img src="./images/getfair.png" 
+            alt="GetFair"
+            class="paper-thumb"
+            data-img="./images/getfair.png">
+          </div>
+          <div class="pub-content">
+            <h3>Hate Speech Detection with Generalizable Target-Aware Fairness</h3>
+            <div class="authors">
+              Tong Chen, <strong>Danny Wang</strong>, Xurong Liang,
+              Marten Risius, Gianluca Demartini, Hongzhi Yin
+            </div>
+            <p class="meta">
+              <span class="pub-venue">KDD 2024</span>
+            </p>
+            <p>We propose the GetFair framework, a novel approach for equitably detecting hate speech across diverse targets, including those unseen during training. This framework ensures fair detection with consideration of the social groups targeted in the content.</p>
+            <div class="cta">
+              <button class="btn ghost open-abs"
+                data-title="Hate Speech Detection with Generalizable Target-aware Fairness"
+                data-abstract="To counter the side effect brought by the proliferation of social media platforms, hate speech detection (HSD) plays a vital role in halting the dissemination of toxic online posts at an early stage. However, given the ubiquitous topical communities on social media, a trained HSD classifier can easily become biased towards specific targeted groups (e.g.,female andblack people), where a high rate of either false positive or false negative results can significantly impair public trust in the fairness of content moderation mechanisms, and eventually harm the diversity of online society. Although existing fairness-aware HSD methods can smooth out some discrepancies across targeted groups, they are mostly specific to a narrow selection of targets that are assumed to be known and fixed. This inevitably prevents those methods from generalizing to real-world use cases where new targeted groups constantly emerge (e.g., new forums created on Reddit) over time. To tackle the defects of existing HSD practices, we propose <u>Ge</u>neralizable <u>t</u>arget-aware <u>Fair</u>ness (GetFair), a new method for fairly classifying each post that contains diverse and even unseen targets during inference. To remove the HSD classifier's spurious dependence on target-related features, GetFair trains a series of filter functions in an adversarial pipeline, so as to deceive the discriminator that recovers the targeted group from filtered post embeddings. To maintain scalability and generalizability, we innovatively parameterize all filter functions via a hypernetwork. Taking a target's pretrained word embedding as input, the hypernetwork generates the weights used by each target-specific filter on-the-fly without storing dedicated filter parameters. In addition, a novel semantic gap alignment scheme is imposed on the generation process, such that the produced filter function for an unseen target is rectified by its semantic affinity with existing targets used for training. Finally, experiments are conducted on two benchmark HSD datasets, showing advantageous performance of GetFair on out-of-sample targets among baselines.">
+                Show abstract
+              </button>
+              <a class="btn" href="https://dl.acm.org/doi/abs/10.1145/3637528.3671821" target="_blank">Paper</a>
+              <a class="btn" href="https://github.com/xurong-liang/GetFair" target="_blank">Code</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section-title">Teaching · Education · Awards</h2>
+      <div class="info-rows">
+        <article class="info-row">
+          <div class="info-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+          <div class="info-content">
+            <h3>Teaching</h3>
+            <ul class="list">
+              <li>2024-2025: Tutor - Master of Data Science Capstone (DATA7901/7903)</li>
+              <li>2024-2025: Tutor - Undergraduate and Postgraduate Course "Advanced Techniques for High Dimensional Data" (INFS4205/7205)</li>
+              <li>2022: Tutor - Postgraduate Course "Introduction to Data Science" (DATA7001)</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="info-row">
+          <div class="info-icon"><i class="fa-solid fa-user-graduate"></i></div>
+          <div class="info-content">
+            <h3>Education</h3>
+            <ul class="list">
+              <li>2024–2027: Doctor of Philosophy (PhD) in CS, The University of Queensland</li>
+              <li>2020–2023: Bachelor of Computer Science/ Master of Data Science, The University of Queensland - <strong>GPA Rank 1st</strong></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="info-row">
+          <div class="info-icon"><i class="fa-solid fa-award"></i></div>
+          <div class="info-content">
+            <h3>Awards</h3>
+            <ul class="list">
+              <li>2023: I was selected as the <strong>class of 2023 Valedictorian</strong> for the graduation ceremony of the Faculty of Engineering, Architecture and Information Technology</li>
+              <li>2020-2023: <strong>Dean's Commendation for Academic Excellence</strong>. The Faculty of Engineering, Architecture and Information Technology, has determined that students who demonstrate excellence in academic performance should receive acknowledgement of the achievement.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Modal (abstract popup) -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-dialog" role="document">
+      <button class="modal-close" aria-label="Close" data-close>&times;</button>
+      <h3 id="modal-title"></h3>
+      <p id="modal-body"></p>
+       <img id="modal-img" alt="" style="display:none; max-width:100%; height:auto;">
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-flex">
+      <p>&copy; <span id="year"></span> Danny Wang. All rights reserved.</p>
+      <p> Updated on 23/8/2025</p>
+      <!-- ClustrMaps compact badge -->
+      <div id="clustrmaps-widget">
+        <script
+          id="clstr_globe"
+          src="//clustrmaps.com/globe.js?d=Z_eDdxmRmKJNB-6CkD-fuNodpz-v23QtWbpWgEUEaiE"
+          async defer></script>
+        <noscript>
+          <a href="https://clustrmaps.com/site/your-site" rel="noopener" target="_blank">Visitor Map</a>
+        </noscript>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
