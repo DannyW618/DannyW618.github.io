@@ -33,8 +33,8 @@ toggle.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
   new Typed('#typed-text', {
     strings: ['CS PhD candidate', 'Research assistant', 'Teaching staff'],
-    typeSpeed: 38,      // was 45
-    backSpeed: 18,      // was 26
+    typeSpeed: 38,      
+    backSpeed: 18,      
     backDelay: 1600,    // pause a bit longer
     loop: true,
     smartBackspace: true,
@@ -52,7 +52,7 @@ if (moon){
   });
 }
 
-// optional: load persisted theme on startup (already applied above, keep as guard)
+
 try{
   const again = localStorage.getItem('theme');
   if(again) document.documentElement.setAttribute('data-theme', again);
