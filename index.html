@@ -79,6 +79,64 @@
         <!-- Row 1 -->
         <article class="pub-row">
           <div class="pub-media">
+            <img src="./images/TIDE.png" 
+            alt="TextTopo"
+            class="paper-thumb"
+            data-img="./images/TIDE.png">
+          </div>
+          <div class="pub-content">
+            <h3>What Information Matters? Graph Out-of-Distribution Detection via Tri-Component Information Decomposition</h3>
+            <div class="authors">
+              <strong>Danny Wang</strong>, <a href="https://ruihongqiu.github.io/">Ruihong Qiu</a>, <a href="https://scholar.google.com/citations?user=iAWMsgEAAAAJ&hl=en">Zi Huang</a>
+            </div>
+            <p class="meta">
+              <span class="pub-venue">ICML 2026</span>
+            </p>
+            <p>We propose Tide, a tri-component information decomposition framework for graph OOD detection that preserves shift-indicative label-relevant joint signals.</p>
+            <div class="cta">
+              <button class="btn ghost open-abs"
+                data-title="What Information Matters? Graph Out-of-Distribution Detection via Tri-Component Information Decomposition"
+                data-abstract="Graph neural networks are widely used for node classification, but they remain vulnerable to out-of-distribution (OOD) shifts in node features and graph structure. Prior work established that methods trained with standard supervised learning (SL) objectives tend to capture spurious signals from either features and/or structure, leaving the model fragile under distributional changes. To address this, we propose Tide, a novel and effective Tri-Component Information Decomposition framework that explicitly decomposes information into feature-specific, structure-specific, and joint components. Tide aims to preserve only the label-relevant part of the joint information while filtering out spurious feature- and structure-specific information, thereby enhancing the separation between in-distribution (ID) and OOD nodes. Beyond the framework, we provide theoretical and empirical analyses showing that an information bottleneck objective is preferable to standard SL for graph OOD detection, with higher ID confidence and a greater entropy gap between ID and OOD data. Extensive experiments across seven datasets confirm the efficacy of Tide, achieving up to a 34% improvement in FPR95 over strong baselines while maintaining competitive ID accuracy.">
+                Show abstract
+              </button>
+              <!-- <a class="btn" href="https://arxiv.org/abs/2508.17690" target="_blank">Paper</a> -->
+              <!-- <a class="btn" href="https://github.com/DannyW618/TNT" target="_blank">Code</a> -->
+            </div>
+          </div>
+        </article>
+
+        <!-- Row 2 -->
+        <article class="pub-row">
+          <div class="pub-media">
+            <img src="./images/VSB.png" 
+            alt="TextTopo"
+            class="paper-thumb"
+            data-img="./images/VSB.png">
+          </div>
+          <div class="pub-content">
+            <h3>When to Commit? Towards Variable-Size Self-Contained Blocks for Discrete Diffusion Language Models</h3>
+            <div class="authors">
+              <strong>Danny Wang</strong>, <a href="https://ruihongqiu.github.io/">Ruihong Qiu</a>, <a href="https://scholar.google.com/citations?user=iAWMsgEAAAAJ&hl=en">Zi Huang</a>
+            </div>
+            <p class="meta">
+              <span class="pub-venue">Preprint</span>
+            </p>
+            <p>We propose VSB, a variable-size block decoding method for dLLMs based on a novel self-containedness principle to address future-dependent token commitment and training-inference mismatch.</p>
+            <div class="cta">
+              <button class="btn ghost open-abs"
+                data-title="When to Commit? Towards Variable-Size Self-Contained Blocks for Discrete Diffusion Language Models"
+                data-abstract="Discrete diffusion language models (dLLMs) enable parallel token updates with bidirectional attention, yet practical generation typically adopts blockwise semi-autoregressive decoding. This switch creates a training-inference mismatch: training denoises with full-sequence context, while inference commits tokens within a bounded block without future context. Therefore, decoding with fixed-size or heuristic-based blocks can lead to premature token commitments, as decisions are made without full access to future context that could alter those choices. Motivated by this, we propose self-containedness as a principled criterion for block commitment. A block is self-contained if its predictions remain consistent with Future-Aware (FA) or without No-Future (NF) access to future context, reframing block boundary selection as a test of self-containedness rather than a heuristic choice. Based on this principle, we introduce Variable-size Self-contained Blocks (VSB) for dLLMs. VSB scores and selects block boundaries using the divergence between token-level predictive distributions under NF and FA conditioning, which quantifies how predictions would change if future context were revealed. We provide theoretical justification linking self-containedness to predictive consistency, and extensive experiments validate VSB's efficacy over fixed-size and heuristic blockwise decoding.">
+                Show abstract
+              </button>
+              <a class="btn" href="https://arxiv.org/abs/2604.23994" target="_blank">Paper</a>
+              <!-- <a class="btn" href="https://github.com/DannyW618/TNT" target="_blank">Code</a> -->
+            </div>
+          </div>
+        </article>
+
+        <!-- Row 3 -->
+        <article class="pub-row">
+          <div class="pub-media">
             <img src="./images/text-topo.png" 
             alt="TextTopo"
             class="paper-thumb"
@@ -105,7 +163,7 @@
           </div>
         </article>
 
-        <!-- Row 2 -->
+        <!-- Row 4 -->
         <article class="pub-row">
           <div class="pub-media">
             <img src="./images/gold.png" 
@@ -134,7 +192,7 @@
           </div>
         </article>
 
-        <!-- Row 3 -->
+        <!-- Row 5 -->
         <article class="pub-row">
           <div class="pub-media">
             <img src="./images/getfair.png" 
@@ -228,7 +286,7 @@
   <footer class="footer">
     <div class="container footer-flex">
       <p>&copy; <span id="year"></span> Danny Wang. All rights reserved.</p>
-      <p> Updated on 2/9/2025</p>
+      <p> Updated on 1/5/2026</p>
       <!-- ClustrMaps compact badge -->
       <div id="clustrmaps-widget">
         <script
