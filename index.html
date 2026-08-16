@@ -1,312 +1,262 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Danny Wang</title>
-
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="./styles.css">
-  <script defer src="./script.js"></script>
-
-  <!-- Typed (hero line) -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <!-- tsParticles (interactive background for About) -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Danny Wang — Computer Science PhD candidate at The University of Queensland.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://mapmyvisitors.com; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <title>Danny Wang — Personal Page</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- Navbar -->
-  <header class="nav">
-    <div class="nav-inner">
-      <div class="brand">Danny Wang</div>
-      <nav class="links">
-        <a href="#about">About</a>
-        <a href="#publications">Publications</a>
-        <a href="#experience">Experience</a>
+<div id="page" data-theme="light" style="position:relative;min-height:100vh;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);transition:background 240ms ease,color 240ms ease">
+
+  <header style="position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--color-bg) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--color-divider)">
+    <div style="max-width:1080px;margin:0 auto;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="#top" style="font-family:var(--font-heading);font-size:20px;letter-spacing:.01em;color:var(--color-text);text-decoration:none">Danny Wang</a>
+      <nav style="display:flex;align-items:center;gap:28px">
+        <a href="#about" style="font-family:var(--font-heading);font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-neutral-700);text-decoration:none" class="swipe">About</a>
+        <a href="#research" style="font-family:var(--font-heading);font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-neutral-700);text-decoration:none" class="swipe">Research</a>
+        <a href="#publications" style="font-family:var(--font-heading);font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-neutral-700);text-decoration:none" class="swipe">Publications</a>
+        <a href="#experience" style="font-family:var(--font-heading);font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-neutral-700);text-decoration:none" class="swipe">Experience</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle colour theme" style="cursor:pointer;background:transparent;border:1px solid var(--color-divider);border-radius:var(--radius-md);padding:5px 12px;font-family:var(--font-heading);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-neutral-700)">Dark</button>
       </nav>
-      <div class="nav-ops">
-        <button id="theme-toggle" class="toggle" aria-label="Toggle theme">
-          <span class="knob"></span>
-        </button>
-        <i class="fa-solid fa-moon moon-icon" aria-hidden="true" title="Toggle theme"></i>
-      </div>
+      <div id="scrollbar"></div>
     </div>
   </header>
 
-  <section id="about" class="section about-section">
-    <div id="about-bg"></div>
+  <main id="top" style="position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 40px">
 
-    <div class="container about-wrap hover-sheen">
-      <div class="about-media">
-        <!-- <img src="./images/profile.jpg" alt="avatar" class="avatar" /> -->
-      </div>
-      <div class="about-text">
-        <h1>Danny Wang</h1>
-        <h2><span id="typed-text"></span></h2>
-        <p class="affiliation">School of EECS, The University of Queensland, Australia</p>
+    <section id="about" style="padding:88px 0 64px">
+      <p data-hero="1" style="margin:0 0 22px;font-family:var(--font-heading);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--color-accent-700);font-feature-settings:'tnum'">School of EECS · The University of Queensland</p>
+      <h1 data-hero="2" style="margin:0;font-size:clamp(76px,9.6vw,132px);font-weight:400;line-height:.96;letter-spacing:-0.035em">Danny Wang</h1>
+      <p data-hero="3" style="margin:18px 0 0;font-size:24px;font-family:var(--font-heading);font-style:italic;color:var(--color-neutral-700);min-height:34px"><span id="typed-text">CS PhD candidate</span><span style="display:inline-block;width:1px;height:22px;margin-left:3px;vertical-align:-3px;background:var(--color-accent);animation:caret 1.1s step-end infinite"></span></p>
 
-        <p class="lead">
-          I am a PhD student at <span class="highlight">The University of Queensland (UQ)</span>, Australia, specialising in 
-          <span class="highlight">Large Language Models (LLMs)</span>, <span class="highlight">Diffusion Language Models (dLLMs)</span>, and <span class="highlight">Graph Machine Learning</span>.
-          My research is conducted under the supervision of Dr. <a href="https://ruihongqiu.github.io/">Ruihong Qiu</a>,
-         A/Prof. <a href="https://scholar.google.com/citations?user=4TjSSaUAAAAJ">Guangdong Bai</a>,
-          and Prof. <a href="https://scholar.google.com/citations?user=iAWMsgEAAAAJ&hl=en">Zi (Helen) Huang</a>. I completed my dual Bachelor 
-          of Computer Science and Master of Data Science degrees at UQ under the supervision of A/Prof. <a href="https://scholar.google.com/citations?hl=en&user=07cqSMsAAAAJ"> Tong (Rocky) Chen</a>, graduating as the class of
-          <span class="highlight">2023 Valedictorian</span>.
-        </p>
+      <hr class="hr sec-rule" style="margin:36px 0 32px">
 
-        <div class="socials">
-          <a href="danny.wang@uq.edu.au" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-          <a href="https://scholar.google.com.au/citations?user=I1K5STAAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-          <a href="https://www.linkedin.com/in/danny-wang-374581217/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://github.com/DannyW618" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <div data-hero="4" style="display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:56px;align-items:start">
+        <div>
+          <p style="margin:0;font-size:16.5px;line-height:1.85;text-align:justify;hyphens:auto;text-wrap:pretty">
+            I am a PhD student at <a href="https://www.uq.edu.au" target="_blank" rel="noopener noreferrer">The University of Queensland</a>, Australia, specialising in <strong style="font-weight:500;color:var(--color-text);background:color-mix(in srgb, var(--color-accent) 16%, transparent);border-radius:2px;padding:1px 3px;margin:0 -2px;box-decoration-break:clone;-webkit-box-decoration-break:clone">large language models</strong>, <strong style="font-weight:500;color:var(--color-text);background:color-mix(in srgb, var(--color-accent) 16%, transparent);border-radius:2px;padding:1px 3px;margin:0 -2px;box-decoration-break:clone;-webkit-box-decoration-break:clone">diffusion language models</strong>, and <strong style="font-weight:500;color:var(--color-text);background:color-mix(in srgb, var(--color-accent) 16%, transparent);border-radius:2px;padding:1px 3px;margin:0 -2px;box-decoration-break:clone;-webkit-box-decoration-break:clone">graph machine learning</strong>. My research is supervised by Dr <a href="https://ruihongqiu.github.io/" target="_blank" rel="noopener noreferrer">Ruihong Qiu</a>, A/Prof <a href="https://scholar.google.com/citations?user=4TjSSaUAAAAJ" target="_blank" rel="noopener noreferrer">Guangdong Bai</a>, and Prof <a href="https://scholar.google.com/citations?user=iAWMsgEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Zi (Helen) Huang</a>. I completed dual Bachelor of Computer Science and Master of Data Science degrees at UQ under the supervision of A/Prof <a href="https://scholar.google.com/citations?hl=en&amp;user=07cqSMsAAAAJ" target="_blank" rel="noopener noreferrer">Tong (Rocky) Chen</a>, graduating as the <strong style="font-weight:500;color:var(--color-text);background:color-mix(in srgb, var(--color-accent) 16%, transparent);border-radius:2px;padding:1px 3px;margin:0 -2px;box-decoration-break:clone;-webkit-box-decoration-break:clone">class of 2023 Valedictorian</strong>.
+          </p>
+          <p style="margin:22px 0 0;padding-left:22px;border-left:2px solid var(--ink);font-family:var(--font-heading);font-style:italic;font-size:23px;line-height:1.45;text-wrap:pretty">Most of my work circles one question: when a model is confident, how do we know it should be?</p>
+        </div>
+        <div style="border-left:1px solid var(--color-divider);padding-left:32px;display:flex;flex-direction:column;gap:18px">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <a href="mailto:danny.wang@uq.edu.au" style="display:flex;align-items:center;gap:11px;font-family:var(--font-heading);font-size:16px;color:var(--color-text);text-decoration:none;border-bottom:1px solid var(--color-divider);padding-bottom:6px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg><span>Email</span></a>
+            <a href="https://scholar.google.com.au/citations?user=I1K5STAAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:11px;font-family:var(--font-heading);font-size:16px;color:var(--color-text);text-decoration:none;border-bottom:1px solid var(--color-divider);padding-bottom:6px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg><span>Google Scholar</span></a>
+            <a href="https://www.linkedin.com/in/danny-wang-374581217/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:11px;font-family:var(--font-heading);font-size:16px;color:var(--color-text);text-decoration:none;border-bottom:1px solid var(--color-divider);padding-bottom:6px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg><span>LinkedIn</span></a>
+            <a href="https://github.com/DannyW618" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:11px;font-family:var(--font-heading);font-size:16px;color:var(--color-text);text-decoration:none;border-bottom:1px solid var(--color-divider);padding-bottom:6px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg><span>GitHub</span></a>
+          </div>
+          <a class="btn btn-primary" href="files/CV.pdf" target="_blank" rel="noopener noreferrer" style="align-self:start">Curriculum Vitae</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-
-  <section id="publications" class="section">
-    <div class="container">
-      <h2 class="section-title">Publications</h2>
-
-      <div class="pub-list">
-
-        <!-- Row 1 -->
-        <article class="pub-row">
-          <div class="pub-media">
-            <img src="./images/TIDE.png" 
-            alt="TextTopo"
-            class="paper-thumb"
-            data-img="./images/TIDE.png">
-          </div>
-          <div class="pub-content">
-            <h3>What Information Matters? Graph Out-of-Distribution Detection via Tri-Component Information Decomposition</h3>
-            <div class="authors">
-              <strong>Danny Wang</strong>, <a href="https://ruihongqiu.github.io/">Ruihong Qiu</a>, <a href="https://scholar.google.com/citations?user=iAWMsgEAAAAJ&hl=en">Zi Huang</a>
-            </div>
-            <p class="meta">
-              <span class="pub-venue">ICML 2026</span>
-            </p>
-            <p>We propose Tide, a tri-component information decomposition framework for graph OOD detection that preserves shift-indicative label-relevant joint signals.</p>
-            <div class="cta">
-              <button class="btn ghost open-abs"
-                data-title="What Information Matters? Graph Out-of-Distribution Detection via Tri-Component Information Decomposition"
-                data-abstract="Graph neural networks are widely used for node classification, but they remain vulnerable to out-of-distribution (OOD) shifts in node features and graph structure. Prior work established that methods trained with standard supervised learning (SL) objectives tend to capture spurious signals from either features and/or structure, leaving the model fragile under distributional changes. To address this, we propose Tide, a novel and effective Tri-Component Information Decomposition framework that explicitly decomposes information into feature-specific, structure-specific, and joint components. Tide aims to preserve only the label-relevant part of the joint information while filtering out spurious feature- and structure-specific information, thereby enhancing the separation between in-distribution (ID) and OOD nodes. Beyond the framework, we provide theoretical and empirical analyses showing that an information bottleneck objective is preferable to standard SL for graph OOD detection, with higher ID confidence and a greater entropy gap between ID and OOD data. Extensive experiments across seven datasets confirm the efficacy of Tide, achieving up to a 34% improvement in FPR95 over strong baselines while maintaining competitive ID accuracy.">
-                Show abstract
-              </button>
-              <a class="btn" href="https://arxiv.org/abs/2605.13032" target="_blank">Paper</a>
-              <a class="btn" href="https://github.com/DannyW618/TIDE" target="_blank">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Row 2 -->
-        <article class="pub-row">
-          <div class="pub-media">
-            <img src="./images/VSB.png" 
-            alt="TextTopo"
-            class="paper-thumb"
-            data-img="./images/VSB.png">
-          </div>
-          <div class="pub-content">
-            <h3>When to Commit? Towards Variable-Size Self-Contained Blocks for Discrete Diffusion Language Models</h3>
-            <div class="authors">
-              <strong>Danny Wang</strong>, <a href="https://ruihongqiu.github.io/">Ruihong Qiu</a>, <a href="https://scholar.google.com/citations?user=iAWMsgEAAAAJ&hl=en">Zi Huang</a>
-            </div>
-            <p class="meta">
-              <span class="pub-venue">Preprint</span>
-            </p>
-            <p>We propose VSB, a variable-size block decoding method for dLLMs based on a novel self-containedness principle to address future-dependent token commitment and training-inference mismatch.</p>
-            <div class="cta">
-              <button class="btn ghost open-abs"
-                data-title="When to Commit? Towards Variable-Size Self-Contained Blocks for Discrete Diffusion Language Models"
-                data-abstract="Discrete diffusion language models (dLLMs) enable parallel token updates with bidirectional attention, yet practical generation typically adopts blockwise semi-autoregressive decoding. This switch creates a training-inference mismatch: training denoises with full-sequence context, while inference commits tokens within a bounded block without future context. Therefore, decoding with fixed-size or heuristic-based blocks can lead to premature token commitments, as decisions are made without full access to future context that could alter those choices. Motivated by this, we propose self-containedness as a principled criterion for block commitment. A block is self-contained if its predictions remain consistent with Future-Aware (FA) or without No-Future (NF) access to future context, reframing block boundary selection as a test of self-containedness rather than a heuristic choice. Based on this principle, we introduce Variable-size Self-contained Blocks (VSB) for dLLMs. VSB scores and selects block boundaries using the divergence between token-level predictive distributions under NF and FA conditioning, which quantifies how predictions would change if future context were revealed. We provide theoretical justification linking self-containedness to predictive consistency, and extensive experiments validate VSB's efficacy over fixed-size and heuristic blockwise decoding.">
-                Show abstract
-              </button>
-              <a class="btn" href="https://arxiv.org/abs/2604.23994" target="_blank">Paper</a>
-              <!-- <a class="btn" href="https://github.com/DannyW618/TNT" target="_blank">Code</a> -->
-            </div>
-          </div>
-        </article>
-
-        <!-- Row 3 -->
-        <article class="pub-row">
-          <div class="pub-media">
-            <img src="./images/text-topo.png" 
-            alt="TextTopo"
-            class="paper-thumb"
-            data-img="./images/text-topo.png">
-          </div>
-          <div class="pub-content">
-            <h3>Text Meets Topology: Rethinking Out-of-distribution Detection in Text-Rich Networks</h3>
-            <div class="authors">
-              <strong>Danny Wang</strong>, <a href="https://ruihongqiu.github.io/">Ruihong Qiu</a>, <a href="https://scholar.google.com/citations?user=4TjSSaUAAAAJ&hl=zh-CN">Guangdong Bai</a>, <a href="https://scholar.google.com/citations?user=iAWMsgEAAAAJ&hl=en">Zi Huang</a>
-            </div>
-            <p class="meta">
-              <span class="pub-venue">EMNLP 2025 - Main Track</span>
-            </p>
-            <p>We introduce TextTopoOOD, a framework for modeling diverse OOD scenarios on text-rich networks, and propose TNT-OOD, a novel detection method that captures the intricate interplay between text and topology.</p>
-            <div class="cta">
-              <button class="btn ghost open-abs"
-                data-title="Text Meets Topology: Rethinking Out-of-distribution Detection in Text-Rich Networks"
-                data-abstract="Out-of-distribution (OOD) detection remains challenging in text-rich networks, where textual features intertwine with topological structures. Existing methods primarily address label shifts or rudimentary domain-based splits, overlooking the intricate textual-structural diversity. For example, in social networks, where users represent nodes with textual features (name, bio) while edges indicate friendship status, OOD may stem from the distinct language patterns between bot and normal users. To address this gap, we introduce the TextTopoOOD framework for evaluating detection across diverse OOD scenarios: (1) attribute-level shifts via text augmentations and embedding perturbations; (2) structural shifts through edge rewiring and semantic connections; (3) thematically-guided label shifts; and (4) domain-based divisions. Furthermore, we propose TNT-OOD to model the complex interplay between Text aNd Topology using: 1) a novel cross-attention module to fuse local structure into node-level text representations, and 2) a HyperNetwork to generate node-specific transformation parameters. This aligns topological and semantic features of ID nodes, enhancing ID/OOD distinction across structural and textual shifts. Experiments on 11 datasets across four OOD scenarios demonstrate the nuanced challenge of TextTopoOOD for evaluating OOD detection in text-rich networks.">
-                Show abstract
-              </button>
-              <a class="btn" href="https://arxiv.org/abs/2508.17690" target="_blank">Paper</a>
-              <a class="btn" href="https://github.com/DannyW618/TNT" target="_blank">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Row 4 -->
-        <article class="pub-row">
-          <div class="pub-media">
-            <img src="./images/gold.png" 
-            alt="GOLD"
-            class="paper-thumb"
-            data-img="./images/gold.png">
-          </div>
-          <div class="pub-content">
-            <h3>GOLD: Graph Out-of-Distribution Detection via Implicit Adversarial Latent Generation</h3>
-            <div class="authors">
-              <strong>Danny Wang</strong>, <a href="https://ruihongqiu.github.io/">Ruihong Qiu</a>, <a href="https://scholar.google.com/citations?user=4TjSSaUAAAAJ&hl=zh-CN">Guangdong Bai</a>, <a href="https://scholar.google.com/citations?user=iAWMsgEAAAAJ&hl=en">Zi Huang</a>
-            </div>
-            <p class="meta">
-              <span class="pub-venue">ICLR 2025 - Spotlight</span>
-            </p>
-            <p>We propose the GOLD framework for graph OOD detection, an implicit adversarial learning pipeline with synthetic OOD exposure without pre-trained models.</p>
-            <div class="cta">
-              <button class="btn ghost open-abs"
-                data-title="GOLD: Graph Out-of-Distribution Detection via Implicit Adversarial Latent Generation"
-                data-abstract="Despite graph neural networks' (GNNs) great success in modelling graph-structured data, out-of-distribution (OOD) test instances still pose a great challenge for current GNNs. One of the most effective techniques to detect OOD nodes is to expose the detector model with an additional OOD node-set, yet the extra OOD instances are often difficult to obtain in practice. Recent methods for image data address this problem using OOD data synthesis, typically relying on pre-trained generative models like Stable Diffusion. However, these approaches require vast amounts of additional data, as well as one-for-all pre-trained generative models, which are not available for graph data. Therefore, we propose the GOLD framework for graph OOD detection, an implicit adversarial learning pipeline with synthetic OOD exposure without pre-trained models. The implicit adversarial training process employs a novel alternating optimisation framework by training: (1) a latent generative model to regularly imitate the in-distribution (ID) embeddings from an evolving GNN, and (2) a GNN encoder and an OOD detector to accurately classify ID data while increasing the energy divergence between the ID embeddings and the generative model's synthetic embeddings. This novel approach implicitly transforms the synthetic embeddings into pseudo-OOD instances relative to the ID data, effectively simulating exposure to OOD scenarios without auxiliary data. Extensive OOD detection experiments are conducted on five benchmark graph datasets, verifying the superior performance of GOLD without using real OOD data compared with the state-of-the-art OOD exposure and non-exposure baselines.">
-                Show abstract
-              </button>
-              <a class="btn" href="https://arxiv.org/abs/2502.05780" target="_blank">Paper</a>
-              <a class="btn" href="https://github.com/DannyW618/GOLD" target="_blank">Code</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Row 5 -->
-        <article class="pub-row">
-          <div class="pub-media">
-            <img src="./images/getfair.png" 
-            alt="GetFair"
-            class="paper-thumb"
-            data-img="./images/getfair.png">
-          </div>
-          <div class="pub-content">
-            <h3>Hate Speech Detection with Generalizable Target-Aware Fairness</h3>
-            <div class="authors">
-              Tong Chen, <strong>Danny Wang</strong>, Xurong Liang,
-              Marten Risius, Gianluca Demartini, Hongzhi Yin
-            </div>
-            <p class="meta">
-              <span class="pub-venue">KDD 2024</span>
-            </p>
-            <p>We propose the GetFair framework, a novel approach for equitably detecting hate speech across diverse targets, including those unseen during training. This framework ensures fair detection with consideration of the social groups targeted in the content.</p>
-            <div class="cta">
-              <button class="btn ghost open-abs"
-                data-title="Hate Speech Detection with Generalizable Target-aware Fairness"
-                data-abstract="To counter the side effect brought by the proliferation of social media platforms, hate speech detection (HSD) plays a vital role in halting the dissemination of toxic online posts at an early stage. However, given the ubiquitous topical communities on social media, a trained HSD classifier can easily become biased towards specific targeted groups (e.g.,female andblack people), where a high rate of either false positive or false negative results can significantly impair public trust in the fairness of content moderation mechanisms, and eventually harm the diversity of online society. Although existing fairness-aware HSD methods can smooth out some discrepancies across targeted groups, they are mostly specific to a narrow selection of targets that are assumed to be known and fixed. This inevitably prevents those methods from generalizing to real-world use cases where new targeted groups constantly emerge (e.g., new forums created on Reddit) over time. To tackle the defects of existing HSD practices, we propose <u>Ge</u>neralizable <u>t</u>arget-aware <u>Fair</u>ness (GetFair), a new method for fairly classifying each post that contains diverse and even unseen targets during inference. To remove the HSD classifier's spurious dependence on target-related features, GetFair trains a series of filter functions in an adversarial pipeline, so as to deceive the discriminator that recovers the targeted group from filtered post embeddings. To maintain scalability and generalizability, we innovatively parameterize all filter functions via a hypernetwork. Taking a target's pretrained word embedding as input, the hypernetwork generates the weights used by each target-specific filter on-the-fly without storing dedicated filter parameters. In addition, a novel semantic gap alignment scheme is imposed on the generation process, such that the produced filter function for an unseen target is rectified by its semantic affinity with existing targets used for training. Finally, experiments are conducted on two benchmark HSD datasets, showing advantageous performance of GetFair on out-of-sample targets among baselines.">
-                Show abstract
-              </button>
-              <a class="btn" href="https://dl.acm.org/doi/abs/10.1145/3637528.3671821" target="_blank">Paper</a>
-              <a class="btn" href="https://github.com/xurong-liang/GetFair" target="_blank">Code</a>
-            </div>
-          </div>
-        </article>
-
+    <section data-reveal="" id="research" style="padding:56px 0 64px;border-top:1px solid var(--color-divider)">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:34px"><h2 style="margin:0;font-size:clamp(30px,3.4vw,42px);font-weight:400;font-style:italic;white-space:nowrap">Research Interests</h2><span class="sec-rule" style="flex:1;height:1px;background:linear-gradient(90deg,var(--ink),var(--color-accent) 55%,transparent)"></span></div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0">
+        <div style="padding:0 32px 0 0">
+          <p style="margin:0 0 10px;font-family:var(--font-heading);font-size:14px;letter-spacing:.14em;color:var(--color-accent);font-feature-settings:'tnum'">01</p>
+          <h3 style="margin:0 0 12px;font-size:26px;font-weight:400">Large Language Models</h3>
+          <p style="margin:0;font-size:15px;line-height:1.8;color:var(--color-neutral-700);text-align:justify;hyphens:auto">Reliability and reasoning behaviour of LLMs — how models commit to answers, and how confidence and context shape what they get right.</p>
+        </div>
+        <div style="padding:0 32px;border-left:1px solid var(--color-divider)">
+          <p style="margin:0 0 10px;font-family:var(--font-heading);font-size:14px;letter-spacing:.14em;color:var(--color-accent);font-feature-settings:'tnum'">02</p>
+          <h3 style="margin:0 0 12px;font-size:26px;font-weight:400">Diffusion Language Models</h3>
+          <p style="margin:0;font-size:15px;line-height:1.8;color:var(--color-neutral-700);text-align:justify;hyphens:auto">Decoding strategies for discrete diffusion models — block commitment, training–inference mismatch, and parallel generation that stays coherent.</p>
+        </div>
+        <div style="padding:0 0 0 32px;border-left:1px solid var(--color-divider)">
+          <p style="margin:0 0 10px;font-family:var(--font-heading);font-size:14px;letter-spacing:.14em;color:var(--color-accent);font-feature-settings:'tnum'">03</p>
+          <h3 style="margin:0 0 12px;font-size:26px;font-weight:400">Graph Machine Learning</h3>
+          <p style="margin:0;font-size:15px;line-height:1.8;color:var(--color-neutral-700);text-align:justify;hyphens:auto">Out-of-distribution detection on graphs and text-rich networks — separating genuine signal from the spurious structure models learn to lean on.</p>
+        </div>
       </div>
-    </div>
-  </section>
 
+    </section>
 
+    <section data-reveal="" id="publications" style="padding:56px 0 24px;border-top:1px solid var(--color-divider)">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:44px"><h2 style="margin:0;font-size:clamp(30px,3.4vw,42px);font-weight:400;font-style:italic;white-space:nowrap">Publications</h2><span class="sec-rule" style="flex:1;height:1px;background:linear-gradient(90deg,var(--ink),var(--color-accent) 55%,transparent)"></span></div>
 
-  <section id="experience" class="section">
-    <div class="container">
-      <h2 class="section-title">Services · Teaching · Education · Awards</h2>
-      <div class="info-rows">
-        <article class="info-row">
-          <div class="info-icon"><i class="fa-solid fa-user-graduate"></i></div>
-          <div class="info-content">
-            <h3>Services - Reviewer</h3>
-            <ul class="list">
-              <li>2026: KDD, AAAI, ICLR, ICML <span class="highlight"> Gold Reviewer - Top 25%</span></li>
-              <li>2025: ICLR, ICML, NeurIPS, ARR May, IJCAI, IEEE TSC</strong></li>
-              <li>2024: CIKM, IJCAI</strong></li>
-            </ul>
+      <article data-reveal="" data-topic="graph" style="display:grid;grid-template-columns:44px minmax(0,340px) minmax(0,1fr);gap:34px;padding-bottom:44px;margin-bottom:44px;border-bottom:1px solid var(--color-divider)">
+        <p style="margin:0;font-family:var(--font-heading);font-size:15px;font-weight:500;color:var(--color-accent);font-feature-settings:'tnum';padding-top:6px;letter-spacing:.02em">01</p>
+
+          <img class="plate zoomable" src="images/TIDE.png" alt="Tide framework figure" style="width:100%;height:auto;cursor:zoom-in;border-radius:var(--radius-sm)">
+
+        <div>
+          <p style="margin:0 0 10px;font-family:var(--font-heading);font-size:12.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-feature-settings:'tnum';display:inline-block;padding:6px 11px;border:1px solid color-mix(in srgb, var(--ink) 40%, transparent);background:color-mix(in srgb, var(--ink) 9%, transparent);border-radius:var(--radius-sm)">ICML 2026</p>
+          <h3 style="margin:0 0 10px;font-size:26px;font-weight:400;line-height:1.22;text-wrap:pretty">What Information Matters? Graph Out-of-Distribution Detection via Tri-Component Information Decomposition</h3>
+          <p style="margin:0 0 12px;font-size:14.5px;color:var(--color-neutral-700)"><strong style="font-weight:600;color:var(--color-text)">Danny Wang</strong>, <a href="https://ruihongqiu.github.io/" target="_blank" rel="noopener noreferrer">Ruihong Qiu</a>, <a href="https://scholar.google.com/citations?user=iAWMsgEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Zi Huang</a></p>
+          <p style="margin:0;font-size:15.5px;line-height:1.8;text-align:justify;hyphens:auto">We propose Tide, a tri-component information decomposition framework for graph OOD detection that preserves shift-indicative, label-relevant joint signals.</p>
+          <details style="margin-top:14px">
+            <summary style="cursor:pointer;display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700)"><span class="abs-plus" style="display:inline-block;transition:transform 200ms ease">+</span>Abstract</summary>
+            <p style="margin:14px 0 0;padding-left:16px;border-left:1px solid var(--color-divider);font-size:14.5px;line-height:1.85;color:var(--color-neutral-700);text-align:justify;hyphens:auto">Graph neural networks are widely used for node classification, but they remain vulnerable to out-of-distribution (OOD) shifts in node features and graph structure. Prior work established that methods trained with standard supervised learning (SL) objectives tend to capture spurious signals from either features and/or structure, leaving the model fragile under distributional changes. To address this, we propose Tide, a novel and effective Tri-Component Information Decomposition framework that explicitly decomposes information into feature-specific, structure-specific, and joint components. Tide aims to preserve only the label-relevant part of the joint information while filtering out spurious feature- and structure-specific information, thereby enhancing the separation between in-distribution (ID) and OOD nodes. Beyond the framework, we provide theoretical and empirical analyses showing that an information bottleneck objective is preferable to standard SL for graph OOD detection, with higher ID confidence and a greater entropy gap between ID and OOD data. Extensive experiments across seven datasets confirm the efficacy of Tide, achieving up to a 34% improvement in FPR95 over strong baselines while maintaining competitive ID accuracy.</p>
+          </details>
+          <div style="display:flex;gap:10px;margin-top:18px">
+            <a class="btn btn-secondary" href="https://arxiv.org/abs/2605.13032" target="_blank" rel="noopener noreferrer">Paper</a>
+            <button type="button" data-bib="tide" class="btn btn-secondary" style="cursor:pointer;font-family:var(--font-heading)">Cite</button>
+            <a class="btn btn-secondary" href="https://github.com/DannyW618/TIDE" target="_blank" rel="noopener noreferrer">Code</a>
           </div>
-        </article>
-        
-        <article class="info-row">
-          <div class="info-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
-          <div class="info-content">
-            <h3>Teaching</h3>
-            <ul class="list">
-              <li>2026: Head Tutor - Undergraduate and Postgraduate Course "Advanced Techniques for High Dimensional Data" (INFS4205/7205)</li>
-              <li>2025-2026: Thesis TA - Research and Development Methods and Practice (REIT7842)</li>
-              <li>2024-2025: Tutor - Master of Data Science Capstone (DATA7901/7903)</li>
-              <li>2024-2025: Tutor - Undergraduate and Postgraduate Course "Advanced Techniques for High Dimensional Data" (INFS4205/7205)</li>
-              <li>2022: Tutor - Postgraduate Course "Introduction to Data Science" (DATA7001)</li>
-            </ul>
-          </div>
-        </article>
+        </div>
+      </article>
 
-        <article class="info-row">
-          <div class="info-icon"><i class="fa-solid fa-user-graduate"></i></div>
-          <div class="info-content">
-            <h3>Education</h3>
-            <ul class="list">
-              <li>2024–2027: Doctor of Philosophy (PhD) in CS, The University of Queensland</li>
-              <li>2020–2023: Bachelor of Computer Science/ Master of Data Science, The University of Queensland - <strong>GPA Rank 1st</strong></li>
-            </ul>
-          </div>
-        </article>
+      <article data-reveal="" data-topic="lm" style="display:grid;grid-template-columns:44px minmax(0,340px) minmax(0,1fr);gap:34px;padding-bottom:44px;margin-bottom:44px;border-bottom:1px solid var(--color-divider)">
+        <p style="margin:0;font-family:var(--font-heading);font-size:15px;font-weight:500;color:var(--color-accent);font-feature-settings:'tnum';padding-top:6px;letter-spacing:.02em">02</p>
 
-        <article class="info-row">
-          <div class="info-icon"><i class="fa-solid fa-award"></i></div>
-          <div class="info-content">
-            <h3>Awards</h3>
-            <ul class="list">
-              <li>2023: I was selected as the <strong>class of 2023 Valedictorian</strong> for the graduation ceremony of the Faculty of Engineering, Architecture and Information Technology</li>
-              <li>2020-2023: <strong>Dean's Commendation for Academic Excellence</strong>. The Faculty of Engineering, Architecture and Information Technology, has determined that students who demonstrate excellence in academic performance should receive acknowledgement of the achievement.</li>
-            </ul>
+          <img class="plate zoomable" src="images/VSB.png" alt="VSB block decoding figure" style="width:100%;height:auto;cursor:zoom-in;border-radius:var(--radius-sm)">
+
+        <div>
+          <p style="margin:0 0 10px;font-family:var(--font-heading);font-size:12.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-feature-settings:'tnum';display:inline-block;padding:6px 11px;border:1px solid color-mix(in srgb, var(--ink) 40%, transparent);background:color-mix(in srgb, var(--ink) 9%, transparent);border-radius:var(--radius-sm)">Preprint</p>
+          <h3 style="margin:0 0 10px;font-size:26px;font-weight:400;line-height:1.22;text-wrap:pretty">When to Commit? Towards Variable-Size Self-Contained Blocks for Discrete Diffusion Language Models</h3>
+          <p style="margin:0 0 12px;font-size:14.5px;color:var(--color-neutral-700)"><strong style="font-weight:600;color:var(--color-text)">Danny Wang</strong>, <a href="https://ruihongqiu.github.io/" target="_blank" rel="noopener noreferrer">Ruihong Qiu</a>, <a href="https://scholar.google.com/citations?user=iAWMsgEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Zi Huang</a></p>
+          <p style="margin:0;font-size:15.5px;line-height:1.8;text-align:justify;hyphens:auto">We propose VSB, a variable-size block decoding method for dLLMs built on a self-containedness principle, addressing future-dependent token commitment and training–inference mismatch.</p>
+          <details style="margin-top:14px">
+            <summary style="cursor:pointer;display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700)"><span class="abs-plus" style="display:inline-block;transition:transform 200ms ease">+</span>Abstract</summary>
+            <p style="margin:14px 0 0;padding-left:16px;border-left:1px solid var(--color-divider);font-size:14.5px;line-height:1.85;color:var(--color-neutral-700);text-align:justify;hyphens:auto">Discrete diffusion language models (dLLMs) enable parallel token updates with bidirectional attention, yet practical generation typically adopts blockwise semi-autoregressive decoding. This switch creates a training-inference mismatch: training denoises with full-sequence context, while inference commits tokens within a bounded block without future context. Therefore, decoding with fixed-size or heuristic-based blocks can lead to premature token commitments, as decisions are made without full access to future context that could alter those choices. Motivated by this, we propose self-containedness as a principled criterion for block commitment. A block is self-contained if its predictions remain consistent with Future-Aware (FA) or without No-Future (NF) access to future context, reframing block boundary selection as a test of self-containedness rather than a heuristic choice. Based on this principle, we introduce Variable-size Self-contained Blocks (VSB) for dLLMs. VSB scores and selects block boundaries using the divergence between token-level predictive distributions under NF and FA conditioning, which quantifies how predictions would change if future context were revealed. We provide theoretical justification linking self-containedness to predictive consistency, and extensive experiments validate VSB's efficacy over fixed-size and heuristic blockwise decoding.</p>
+          </details>
+          <div style="display:flex;gap:10px;margin-top:18px">
+            <a class="btn btn-secondary" href="https://arxiv.org/abs/2604.23994" target="_blank" rel="noopener noreferrer">Paper</a>
+            <button type="button" data-bib="vsb" class="btn btn-secondary" style="cursor:pointer;font-family:var(--font-heading)">Cite</button>
           </div>
-        </article>
+        </div>
+      </article>
+
+      <article data-reveal="" data-topic="graph lm" style="display:grid;grid-template-columns:44px minmax(0,340px) minmax(0,1fr);gap:34px;padding-bottom:44px;margin-bottom:44px;border-bottom:1px solid var(--color-divider)">
+        <p style="margin:0;font-family:var(--font-heading);font-size:15px;font-weight:500;color:var(--color-accent);font-feature-settings:'tnum';padding-top:6px;letter-spacing:.02em">03</p>
+
+          <img class="plate zoomable" src="images/text-topo.png" alt="TNT-OOD figure" style="width:100%;height:auto;cursor:zoom-in;border-radius:var(--radius-sm)">
+
+        <div>
+          <p style="margin:0 0 10px;font-family:var(--font-heading);font-size:12.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-feature-settings:'tnum';display:inline-block;padding:6px 11px;border:1px solid color-mix(in srgb, var(--ink) 40%, transparent);background:color-mix(in srgb, var(--ink) 9%, transparent);border-radius:var(--radius-sm)">EMNLP 2025 · Main Track</p>
+          <h3 style="margin:0 0 10px;font-size:26px;font-weight:400;line-height:1.22;text-wrap:pretty">Text Meets Topology: Rethinking Out-of-Distribution Detection in Text-Rich Networks</h3>
+          <p style="margin:0 0 12px;font-size:14.5px;color:var(--color-neutral-700)"><strong style="font-weight:600;color:var(--color-text)">Danny Wang</strong>, <a href="https://ruihongqiu.github.io/" target="_blank" rel="noopener noreferrer">Ruihong Qiu</a>, <a href="https://scholar.google.com/citations?user=4TjSSaUAAAAJ" target="_blank" rel="noopener noreferrer">Guangdong Bai</a>, <a href="https://scholar.google.com/citations?user=iAWMsgEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Zi Huang</a></p>
+          <p style="margin:0;font-size:15.5px;line-height:1.8;text-align:justify;hyphens:auto">We introduce TextTopoOOD, a framework for modelling diverse OOD scenarios on text-rich networks, and TNT-OOD, a detection method that captures the interplay between text and topology.</p>
+          <details style="margin-top:14px">
+            <summary style="cursor:pointer;display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700)"><span class="abs-plus" style="display:inline-block;transition:transform 200ms ease">+</span>Abstract</summary>
+            <p style="margin:14px 0 0;padding-left:16px;border-left:1px solid var(--color-divider);font-size:14.5px;line-height:1.85;color:var(--color-neutral-700);text-align:justify;hyphens:auto">Out-of-distribution (OOD) detection remains challenging in text-rich networks, where textual features intertwine with topological structures. Existing methods primarily address label shifts or rudimentary domain-based splits, overlooking the intricate textual-structural diversity. For example, in social networks, where users represent nodes with textual features (name, bio) while edges indicate friendship status, OOD may stem from the distinct language patterns between bot and normal users. To address this gap, we introduce the TextTopoOOD framework for evaluating detection across diverse OOD scenarios: (1) attribute-level shifts via text augmentations and embedding perturbations; (2) structural shifts through edge rewiring and semantic connections; (3) thematically-guided label shifts; and (4) domain-based divisions. Furthermore, we propose TNT-OOD to model the complex interplay between Text aNd Topology using: 1) a novel cross-attention module to fuse local structure into node-level text representations, and 2) a HyperNetwork to generate node-specific transformation parameters. This aligns topological and semantic features of ID nodes, enhancing ID/OOD distinction across structural and textual shifts. Experiments on 11 datasets across four OOD scenarios demonstrate the nuanced challenge of TextTopoOOD for evaluating OOD detection in text-rich networks.</p>
+          </details>
+          <div style="display:flex;gap:10px;margin-top:18px">
+            <a class="btn btn-secondary" href="https://arxiv.org/abs/2508.17690" target="_blank" rel="noopener noreferrer">Paper</a>
+            <button type="button" data-bib="tnt" class="btn btn-secondary" style="cursor:pointer;font-family:var(--font-heading)">Cite</button>
+            <a class="btn btn-secondary" href="https://github.com/DannyW618/TNT" target="_blank" rel="noopener noreferrer">Code</a>
+          </div>
+        </div>
+      </article>
+
+      <article data-reveal="" data-topic="graph" style="display:grid;grid-template-columns:44px minmax(0,340px) minmax(0,1fr);gap:34px;padding-bottom:44px;margin-bottom:44px;border-bottom:1px solid var(--color-divider)">
+        <p style="margin:0;font-family:var(--font-heading);font-size:15px;font-weight:500;color:var(--color-accent);font-feature-settings:'tnum';padding-top:6px;letter-spacing:.02em">04</p>
+
+          <img class="plate zoomable" src="images/gold.png" alt="GOLD framework figure" style="width:100%;height:auto;cursor:zoom-in;border-radius:var(--radius-sm)">
+
+        <div>
+          <p style="margin:0 0 10px;font-family:var(--font-heading);font-size:12.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-feature-settings:'tnum';display:inline-block;padding:6px 11px;border:1px solid color-mix(in srgb, var(--ink) 40%, transparent);background:color-mix(in srgb, var(--ink) 9%, transparent);border-radius:var(--radius-sm)">ICLR 2025 · Spotlight</p>
+          <h3 style="margin:0 0 10px;font-size:26px;font-weight:400;line-height:1.22;text-wrap:pretty">GOLD: Graph Out-of-Distribution Detection via Implicit Adversarial Latent Generation</h3>
+          <p style="margin:0 0 12px;font-size:14.5px;color:var(--color-neutral-700)"><strong style="font-weight:600;color:var(--color-text)">Danny Wang</strong>, <a href="https://ruihongqiu.github.io/" target="_blank" rel="noopener noreferrer">Ruihong Qiu</a>, <a href="https://scholar.google.com/citations?user=4TjSSaUAAAAJ" target="_blank" rel="noopener noreferrer">Guangdong Bai</a>, <a href="https://scholar.google.com/citations?user=iAWMsgEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Zi Huang</a></p>
+          <p style="margin:0;font-size:15.5px;line-height:1.8;text-align:justify;hyphens:auto">We propose GOLD, an implicit adversarial learning pipeline for graph OOD detection with synthetic OOD exposure and no pre-trained generative models.</p>
+          <details style="margin-top:14px">
+            <summary style="cursor:pointer;display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700)"><span class="abs-plus" style="display:inline-block;transition:transform 200ms ease">+</span>Abstract</summary>
+            <p style="margin:14px 0 0;padding-left:16px;border-left:1px solid var(--color-divider);font-size:14.5px;line-height:1.85;color:var(--color-neutral-700);text-align:justify;hyphens:auto">Despite graph neural networks' (GNNs) great success in modelling graph-structured data, out-of-distribution (OOD) test instances still pose a great challenge for current GNNs. One of the most effective techniques to detect OOD nodes is to expose the detector model with an additional OOD node-set, yet the extra OOD instances are often difficult to obtain in practice. Recent methods for image data address this problem using OOD data synthesis, typically relying on pre-trained generative models like Stable Diffusion. However, these approaches require vast amounts of additional data, as well as one-for-all pre-trained generative models, which are not available for graph data. Therefore, we propose the GOLD framework for graph OOD detection, an implicit adversarial learning pipeline with synthetic OOD exposure without pre-trained models. The implicit adversarial training process employs a novel alternating optimisation framework by training: (1) a latent generative model to regularly imitate the in-distribution (ID) embeddings from an evolving GNN, and (2) a GNN encoder and an OOD detector to accurately classify ID data while increasing the energy divergence between the ID embeddings and the generative model's synthetic embeddings. This novel approach implicitly transforms the synthetic embeddings into pseudo-OOD instances relative to the ID data, effectively simulating exposure to OOD scenarios without auxiliary data. Extensive OOD detection experiments are conducted on five benchmark graph datasets, verifying the superior performance of GOLD without using real OOD data compared with the state-of-the-art OOD exposure and non-exposure baselines.</p>
+          </details>
+          <div style="display:flex;gap:10px;margin-top:18px">
+            <a class="btn btn-secondary" href="https://arxiv.org/abs/2502.05780" target="_blank" rel="noopener noreferrer">Paper</a>
+            <button type="button" data-bib="gold" class="btn btn-secondary" style="cursor:pointer;font-family:var(--font-heading)">Cite</button>
+            <a class="btn btn-secondary" href="https://github.com/DannyW618/GOLD" target="_blank" rel="noopener noreferrer">Code</a>
+          </div>
+        </div>
+      </article>
+
+      <article data-reveal="" data-topic="fair" style="display:grid;grid-template-columns:44px minmax(0,340px) minmax(0,1fr);gap:34px;padding-bottom:44px;margin-bottom:44px;border-bottom:1px solid var(--color-divider)">
+        <p style="margin:0;font-family:var(--font-heading);font-size:15px;font-weight:500;color:var(--color-accent);font-feature-settings:'tnum';padding-top:6px;letter-spacing:.02em">05</p>
+
+          <img class="plate zoomable" src="images/getfair.png" alt="GetFair framework figure" style="width:100%;height:auto;cursor:zoom-in;border-radius:var(--radius-sm)">
+
+        <div>
+          <p style="margin:0 0 10px;font-family:var(--font-heading);font-size:12.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-feature-settings:'tnum';display:inline-block;padding:6px 11px;border:1px solid color-mix(in srgb, var(--ink) 40%, transparent);background:color-mix(in srgb, var(--ink) 9%, transparent);border-radius:var(--radius-sm)">KDD 2024</p>
+          <h3 style="margin:0 0 10px;font-size:26px;font-weight:400;line-height:1.22;text-wrap:pretty">Hate Speech Detection with Generalizable Target-Aware Fairness</h3>
+          <p style="margin:0 0 12px;font-size:14.5px;color:var(--color-neutral-700)">Tong Chen, <strong style="font-weight:600;color:var(--color-text)">Danny Wang</strong>, Xurong Liang, Marten Risius, Gianluca Demartini, Hongzhi Yin</p>
+          <p style="margin:0;font-size:15.5px;line-height:1.8;text-align:justify;hyphens:auto">GetFair detects hate speech equitably across diverse target groups, including those unseen during training, by removing the classifier's spurious dependence on target-related features.</p>
+          <details style="margin-top:14px">
+            <summary style="cursor:pointer;display:inline-flex;align-items:center;gap:9px;font-family:var(--font-heading);font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700)"><span class="abs-plus" style="display:inline-block;transition:transform 200ms ease">+</span>Abstract</summary>
+            <p style="margin:14px 0 0;padding-left:16px;border-left:1px solid var(--color-divider);font-size:14.5px;line-height:1.85;color:var(--color-neutral-700);text-align:justify;hyphens:auto">To counter the side effect brought by the proliferation of social media platforms, hate speech detection (HSD) plays a vital role in halting the dissemination of toxic online posts at an early stage. However, given the ubiquitous topical communities on social media, a trained HSD classifier can easily become biased towards specific targeted groups, where a high rate of either false positive or false negative results can significantly impair public trust in the fairness of content moderation mechanisms, and eventually harm the diversity of online society. Although existing fairness-aware HSD methods can smooth out some discrepancies across targeted groups, they are mostly specific to a narrow selection of targets that are assumed to be known and fixed. This inevitably prevents those methods from generalizing to real-world use cases where new targeted groups constantly emerge over time. To tackle the defects of existing HSD practices, we propose Generalizable target-aware Fairness (GetFair), a new method for fairly classifying each post that contains diverse and even unseen targets during inference. To remove the HSD classifier's spurious dependence on target-related features, GetFair trains a series of filter functions in an adversarial pipeline, so as to deceive the discriminator that recovers the targeted group from filtered post embeddings. To maintain scalability and generalizability, we innovatively parameterize all filter functions via a hypernetwork. Taking a target's pretrained word embedding as input, the hypernetwork generates the weights used by each target-specific filter on-the-fly without storing dedicated filter parameters. In addition, a novel semantic gap alignment scheme is imposed on the generation process, such that the produced filter function for an unseen target is rectified by its semantic affinity with existing targets used for training. Finally, experiments are conducted on two benchmark HSD datasets, showing advantageous performance of GetFair on out-of-sample targets among baselines.</p>
+          </details>
+          <div style="display:flex;gap:10px;margin-top:18px">
+            <a class="btn btn-secondary" href="https://dl.acm.org/doi/abs/10.1145/3637528.3671821" target="_blank" rel="noopener noreferrer">Paper</a>
+            <button type="button" data-bib="getfair" class="btn btn-secondary" style="cursor:pointer;font-family:var(--font-heading)">Cite</button>
+            <a class="btn btn-secondary" href="https://github.com/xurong-liang/GetFair" target="_blank" rel="noopener noreferrer">Code</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section data-reveal="" id="experience" style="padding:32px 0 64px;border-top:1px solid var(--color-divider)">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:44px"><h2 style="margin:0;font-size:clamp(30px,3.4vw,42px);font-weight:400;font-style:italic;white-space:nowrap">Services, Teaching &amp; Awards</h2><span class="sec-rule" style="flex:1;height:1px;background:linear-gradient(90deg,var(--ink),var(--color-accent) 55%,transparent)"></span></div>
+
+      <div style="display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:28px;padding-bottom:32px;margin-bottom:32px;border-bottom:1px solid var(--color-divider)">
+        <h3 style="margin:0;font-size:28px;font-weight:400">Services</h3>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:grid;grid-template-columns:88px 1fr;gap:20px"><span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);font-feature-settings:'tnum'">2026</span><span style="font-size:15.5px;line-height:1.7">KDD, AAAI, ICLR, ARR May, ICML — <em style="background:color-mix(in srgb, var(--color-accent) 22%, transparent);box-shadow:0 0 0 3px color-mix(in srgb, var(--color-accent) 22%, transparent);color:var(--color-text)">Gold Reviewer, top 25%</em></span></div>
+          <div style="display:grid;grid-template-columns:88px 1fr;gap:20px"><span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);font-feature-settings:'tnum'">2025</span><span style="font-size:15.5px;line-height:1.7">ICLR, ICML, NeurIPS, ARR May, IJCAI, IEEE TSC</span></div>
+          <div style="display:grid;grid-template-columns:88px 1fr;gap:20px"><span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);font-feature-settings:'tnum'">2024</span><span style="font-size:15.5px;line-height:1.7">CIKM, IJCAI</span></div>
+        </div>
       </div>
-    </div>
-  </section>
 
+      <div style="display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:28px;padding-bottom:32px;margin-bottom:32px;border-bottom:1px solid var(--color-divider)">
+        <h3 style="margin:0;font-size:28px;font-weight:400">Teaching</h3>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:grid;grid-template-columns:88px 1fr;gap:20px"><span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);font-feature-settings:'tnum'">2026</span><span style="font-size:15.5px;line-height:1.7">Head Tutor — Advanced Techniques for High Dimensional Data (INFS4205/7205)</span></div>
+          <div style="display:grid;grid-template-columns:88px 1fr;gap:20px"><span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);font-feature-settings:'tnum'">2025–26</span><span style="font-size:15.5px;line-height:1.7">Thesis TA — Research and Development Methods and Practice (REIT7842)</span></div>
+          <div style="display:grid;grid-template-columns:88px 1fr;gap:20px"><span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);font-feature-settings:'tnum'">2024–25</span><span style="font-size:15.5px;line-height:1.7">Tutor — Master of Data Science Capstone (DATA7901/7903)</span></div>
+          <div style="display:grid;grid-template-columns:88px 1fr;gap:20px"><span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);font-feature-settings:'tnum'">2024–25</span><span style="font-size:15.5px;line-height:1.7">Tutor — Advanced Techniques for High Dimensional Data (INFS4205/7205)</span></div>
+          <div style="display:grid;grid-template-columns:88px 1fr;gap:20px"><span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);font-feature-settings:'tnum'">2022</span><span style="font-size:15.5px;line-height:1.7">Tutor — Introduction to Data Science (DATA7001)</span></div>
+        </div>
+      </div>
 
+      <div style="display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:28px;padding-bottom:32px;margin-bottom:32px;border-bottom:1px solid var(--color-divider)">
+        <h3 style="margin:0;font-size:28px;font-weight:400">Education</h3>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:grid;grid-template-columns:88px 1fr;gap:20px"><span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);font-feature-settings:'tnum'">2024–27</span><span style="font-size:15.5px;line-height:1.7">Doctor of Philosophy in Computer Science, The University of Queensland</span></div>
+          <div style="display:grid;grid-template-columns:88px 1fr;gap:20px"><span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);font-feature-settings:'tnum'">2020–23</span><span style="font-size:15.5px;line-height:1.7">Bachelor of Computer Science / Master of Data Science, The University of Queensland — <em>GPA rank 1st</em></span></div>
+        </div>
+      </div>
 
-  <!-- Modal (abstract popup) -->
-  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-dialog" role="document">
-      <button class="modal-close" aria-label="Close" data-close>&times;</button>
-      <h3 id="modal-title"></h3>
-      <p id="modal-body"></p>
-       <img id="modal-img" alt="" style="display:none; max-width:100%; height:auto;">
-    </div>
+      <div style="display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:28px">
+        <h3 style="margin:0;font-size:28px;font-weight:400">Awards</h3>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:grid;grid-template-columns:88px 1fr;gap:20px"><span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);font-feature-settings:'tnum'">2023</span><span style="font-size:15.5px;line-height:1.7">Selected as <em>class of 2023 Valedictorian</em> for the graduation ceremony of the Faculty of Engineering, Architecture and Information Technology.</span></div>
+          <div style="display:grid;grid-template-columns:88px 1fr;gap:20px"><span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);font-feature-settings:'tnum'">2020–23</span><span style="font-size:15.5px;line-height:1.7"><em>Dean's Commendation for Academic Excellence</em>, Faculty of Engineering, Architecture and Information Technology — awarded for excellence in academic performance.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <footer style="padding:26px 0 48px;border-top:1px solid var(--color-divider);display:flex;justify-content:space-between;align-items:center;gap:24px;font-size:13.5px;color:var(--color-neutral-600)">
+      <div style="display:flex;flex-direction:column;gap:5px">
+        <p style="margin:0">© <span id="current-year">2026</span> Danny Wang</p>
+        <p style="margin:0;font-family:var(--font-heading);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);font-feature-settings:'tnum';white-space:nowrap">Updated August 2026</p>
+      </div>
+
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+          <span style="font-family:var(--font-heading);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-neutral-600)">Visitors</span>
+          <div class="visitor-map" style="width:120px;opacity:.9">
+            <a href="https://mapmyvisitors.com/web/1c5jo" target="_blank" rel="noopener noreferrer"><img src="https://mapmyvisitors.com/map.png?d=1c5jo" width="120" height="60" alt="Visitor map"></a>
+          </div>
+        </div>
+
+    </footer>
+  </main>
+
+  <div id="zoom-dialog" class="dialog-backdrop" role="dialog" aria-modal="true" aria-label="Enlarged publication figure" hidden>
+    <img id="zoom-image" class="plate" src="" alt="">
   </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-flex">
-      <p>&copy; <span id="year"></span> Danny Wang. All rights reserved.</p>
-      <p> Updated on 15/5/2026</p>
-      <!-- MapMyVisitors compact badge -->
-      <div id="mapmyvisitors-widget">
-        <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=_LULZTtGbWXIF9XQmWbJPZIxy6rI7yWICT-1IYANMaI&cl=ffffff&w=a"></script>
-      </div>
+  <div id="citation-dialog" class="dialog-backdrop" role="dialog" aria-modal="true" aria-labelledby="citation-title" hidden>
+    <div class="dialog-panel">
+      <h2 id="citation-title">Citation</h2>
+      <textarea id="citation-text" readonly aria-label="BibTeX citation"></textarea>
+      <button id="citation-close" type="button" class="btn btn-secondary">Close</button>
     </div>
-  </footer>
-
+  </div>
 </body>
 </html>
