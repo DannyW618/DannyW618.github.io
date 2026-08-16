@@ -35,7 +35,7 @@ const citations = {
 
 const page = document.querySelector("#page");
 const themeToggle = document.querySelector("#theme-toggle");
-const typedText = document.querySelector("#typed-text");
+const maskedHeadline = document.querySelector("#masked-headline");
 const scrollbar = document.querySelector("#scrollbar");
 const zoomDialog = document.querySelector("#zoom-dialog");
 const zoomImage = document.querySelector("#zoom-image");
@@ -67,46 +67,106 @@ themeToggle.addEventListener("click", () => {
 
 const phrases = ["CS PhD candidate", "Research assistant", "Teaching staff"];
 let phraseIndex = 0;
+let currentTokens;
+let shownTokens;
+let tokenQueue;
+let headlinePhase;
 
-function animatePhrase() {
-  const phrase = phrases[phraseIndex];
-  const unresolved = [];
-  const resolved = new Set();
-  const glyphs = "abcdefghijklmnopqrstuvwxyz";
+function tokenise(phrase) {
+  const tokens = [];
+  const words = phrase.split(" ");
 
-  for (let index = 0; index < phrase.length; index += 1) {
-    if (phrase[index] !== " ") unresolved.push(index);
-  }
-  for (let index = unresolved.length - 1; index > 0; index -= 1) {
-    const swapIndex = Math.floor(Math.random() * (index + 1));
-    [unresolved[index], unresolved[swapIndex]] = [unresolved[swapIndex], unresolved[index]];
-  }
+  words.forEach((word, wordIndex) => {
+    const tokenCount = word.length <= 5 ? 1 : Math.ceil(word.length / 4);
+    const tokenSize = Math.ceil(word.length / tokenCount);
+    const pieces = [];
 
-  function tick() {
-    const steps = Math.random() < 0.35 ? 2 : 1;
-    for (let step = 0; step < steps && unresolved.length; step += 1) {
-      resolved.add(unresolved.pop());
+    for (let index = 0; index < word.length; index += tokenSize) {
+      pieces.push(word.slice(index, index + tokenSize));
     }
-
-    typedText.textContent = [...phrase]
-      .map((character, index) => {
-        if (character === " " || resolved.has(index)) return character;
-        return glyphs[Math.floor(Math.random() * glyphs.length)];
-      })
-      .join("");
-
-    if (unresolved.length) {
-      window.setTimeout(tick, 58);
-    } else {
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-      window.setTimeout(animatePhrase, 2400);
+    if (pieces.length > 1 && pieces[pieces.length - 1].length < 2) {
+      pieces[pieces.length - 2] += pieces.pop();
     }
-  }
+    pieces.forEach((text) => tokens.push({ text, gap: false }));
+    if (wordIndex < words.length - 1) tokens[tokens.length - 1].gap = true;
+  });
 
-  tick();
+  return tokens;
 }
 
-if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) animatePhrase();
+function shuffledIndexes(length) {
+  const indexes = Array.from({ length }, (_, index) => index);
+  for (let index = length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [indexes[index], indexes[swapIndex]] = [indexes[swapIndex], indexes[index]];
+  }
+  return indexes;
+}
+
+function loadPhrase() {
+  currentTokens = tokenise(phrases[phraseIndex]);
+  shownTokens = currentTokens.map(() => false);
+  tokenQueue = shuffledIndexes(currentTokens.length);
+  headlinePhase = "reveal";
+}
+
+function createHeadlineToken(token, isShown) {
+  const element = document.createElement("span");
+  element.className = `headline-token${isShown ? "" : " is-mask"}${token.gap ? " has-gap" : ""}`;
+  element.dataset.shown = String(isShown);
+  element.textContent = isShown ? token.text : "[MASK]";
+  return element;
+}
+
+function renderHeadline() {
+  const elements = Array.from(maskedHeadline.children);
+
+  if (elements.length !== currentTokens.length) {
+    maskedHeadline.replaceChildren(
+      ...currentTokens.map((token, index) => createHeadlineToken(token, shownTokens[index])),
+    );
+    return;
+  }
+
+  currentTokens.forEach((token, index) => {
+    const isShown = shownTokens[index];
+    const element = elements[index];
+    if (element.dataset.shown !== String(isShown)) {
+      element.replaceWith(createHeadlineToken(token, isShown));
+      return;
+    }
+    element.classList.toggle("has-gap", token.gap);
+  });
+}
+
+function tickHeadline() {
+  if (!currentTokens) loadPhrase();
+  let delay = 360;
+
+  if (headlinePhase === "reveal") {
+    if (tokenQueue.length) shownTokens[tokenQueue.pop()] = true;
+    if (!tokenQueue.length) {
+      headlinePhase = "hold";
+      delay = 2600;
+    }
+  } else if (headlinePhase === "hold") {
+    headlinePhase = "mask";
+    tokenQueue = shuffledIndexes(currentTokens.length);
+    delay = 320;
+  } else {
+    if (tokenQueue.length) shownTokens[tokenQueue.pop()] = false;
+    if (!tokenQueue.length) {
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      loadPhrase();
+      delay = 560;
+    }
+  }
+
+  renderHeadline();
+  window.setTimeout(tickHeadline, delay);
+}
+
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) tickHeadline();
 
 function updateScrollbar() {
   const documentRoot = document.scrollingElement || document.documentElement;
