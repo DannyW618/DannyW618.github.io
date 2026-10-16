@@ -1,6 +1,12 @@
 "use strict";
 
 const citations = {
+  vtrace: `@article{yuan2026vtrace,
+  title   = {Tracing the Evidence: Faithful Token Attribution Through Vision-Language Reasoning},
+  author  = {Yuan, Bowen and Wang, Danny and Qiu, Ruihong and Wang, Zijian and Huang, Zi},
+  journal = {arXiv preprint arXiv:2609.37656},
+  year    = {2026}
+}`,
   tide: `@inproceedings{wang2026tide,
   title     = {What Information Matters? Graph Out-of-Distribution Detection via Tri-Component Information Decomposition},
   author    = {Wang, Danny and Qiu, Ruihong and Huang, Zi},
